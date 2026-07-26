@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación Digital - Caterine Mejía | Bienestar desde adentro</title>
+    
+    <!-- Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts para una tipografía elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos personalizados para emular el diseño de la imagen original */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            background-image:
+                radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.5) 0%, rgba(255,255,255,0) 30%),
+                radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(255,255,255,0) 30%);
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Gradiente elegante con el tono #B480EF */
+        .gold-gradient {
+            background: linear-gradient(145deg, #B480EF, #9D5EE3, #8141C8);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15), 
+                        inset 0 1px 1px rgba(243, 232, 252, 0.8);
+        }
+        
+        /* Efecto presionado para los botones */
+        .button-3d:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sombra de texto para legibilidad en los botones */
+        .text-shadow {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Color del nombre y el logo */
+        .name-color {
+            color: #0B4540;
+        }
+        
+        /* Estilo para el icono circular del botón */
+        .icon-bg {
+            background: linear-gradient(145deg, #f3e8fc, #B480EF);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2),
+                        inset 0 1px 1px rgba(255,255,255,0.7),
+                        inset 0 -1px 1px rgba(0,0,0,0.2);
+        }
+        
+        /* Color del ícono dentro del círculo */
+        .icon-color {
+            color: #0B4540;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Definición de gradiente para el logo SVG */
+        .logo-gradient {
+            fill: url(#logoGradient);
+        }
+
+        .social-icon:hover {
+            color: #0B4540;
+        }
+        
+        /* Estilo para la pestaña activa en el popup de instalación */
+        .install-tab-active {
+            border-bottom-width: 2px;
+            border-color: #0B4540;
+            color: #0B4540;
+        }
+
+        .course-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .course-details.open {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen sm:p-4">
+
+    <!-- Contenedor principal de la tarjeta -->
+    <div class="w-full sm:max-w-sm mx-auto bg-white rounded-none sm:rounded-3xl overflow-hidden relative shadow-2xl">
+        
+        <!-- Icono Izquierdo: Instalar Tarjeta -->
+        <a href="#" id="installButton" title="Instalar en mi dispositivo" class="absolute top-4 left-4 z-20 w-12 h-12 bg-black/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center text-white social-icon transition-colors duration-300" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+            <i class="fas fa-mobile-screen-button text-2xl"></i>
+        </a>
+
+        <!-- Icono Derecho: Llamar -->
+        <a href="tel:+573045611080" title="Llamar" class="absolute top-4 right-4 z-20 w-12 h-12 bg-black/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center text-white social-icon transition-colors duration-300" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+            <i class="fas fa-phone-alt text-2xl"></i>
+        </a>
+
+        <!-- Definiciones SVG para gradientes -->
+        <svg width="0" height="0" style="position:absolute">
+            <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0B4540;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#13625b;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <!-- Sección superior con imagen -->
+        <div class="relative text-center pb-8 bg-white">
+            <!-- Contenedor de la imagen superior -->
+            <div class="absolute top-0 left-0 w-full h-[320px]">
+                <img src="https://i.postimg.cc/qMyCw9b7/1784929281471.jpg" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/800x600/0B4540/ffffff?text=Caterine+Mejia';"
+                     alt="Foto de Caterine Mejía" 
+                     class="w-full h-full object-cover object-top">
+                <!-- Gradiente para que la imagen se funda con el fondo blanco -->
+                <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent"></div>
+            </div>
+            
+            <!-- Contenido superpuesto -->
+            <div class="relative z-10 pt-[280px]">
+                <!-- Logo -->
+                <div class="mt-4">
+                    <svg class="h-20 w-20 mx-auto logo-gradient" viewBox="0 0 100 100">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M38.9,80 L38.9,20 L28.9,20 L28.9,80 L38.9,80 Z M43.9,51.5 C38.4,51.5,38.9,59.5,43.9,59.5 L60.9,59.5 C72.9,59.5,72.9,43.5,60.9,43.5 L43.9,43.5 C38.9,43.5,38.9,51.5,43.9,51.5 Z M48.9,47.5 L60.9,47.5 C68.9,47.5,68.9,55.5,60.9,55.5 L48.9,55.5 L48.9,47.5 Z"></path>
+                        <path d="M78.6,50.1 L64,31.4 L58.4,35.6 L69.8,50.1 L58.4,64.5 L64,68.7 L78.6,50.1 Z"></path>
+                    </svg>
+                </div>
+
+                <!-- Nombre y Título -->
+                <div class="mt-2 relative z-10">
+                    <h1 class="font-playfair text-3xl tracking-widest uppercase name-color">
+                        <span class="font-light">CATERINE</span> <span class="font-bold">MEJÍA</span>
+                    </h1>
+                    <p class="text-base font-medium tracking-wider text-[#0B4540] mt-1 font-playfair italic">Bienestar desde adentro</p>
+                    <p class="text-xs tracking-[0.2em] text-gray-400 mt-2"></p>
+                </div>
+
+                <!-- Mensaje de Bienvenida -->
+                <div class="mt-8 relative z-10">
+                    <h2 class="text-2xl font-light text-gray-700">¡BIENVENIDOS!</h2>
+                    <p class="text-xs text-gray-400 mt-1 tracking-wider">TOCA LOS ICONOS PARA INTERACTUAR</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Botones -->
+        <div class="p-6 pt-4 space-y-5 bg-white rounded-b-3xl">
+            
+            <!-- Botón 1: Atención -->
+            <a href="https://wa.me/573045611080" target="_blank" class="relative flex items-center h-14 rounded-full gold-gradient button-3d group transition-transform duration-150 ease-in-out">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center icon-bg">
+                    <i class="fab fa-whatsapp text-4xl icon-color group-hover:scale-110 transition-transform"></i>
+                </div>
+                <span class="w-full pl-16 text-center text-white text-lg font-medium uppercase tracking-wider text-shadow">Escribeme al WhatsApp</span>
+            </a>
+
+            <!-- Botón 7: Horario de atención -->
+            <a href="#" id="scheduleButton" class="relative flex items-center h-14 rounded-full gold-gradient button-3d group transition-transform duration-150 ease-in-out">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center icon-bg">
+                    <i class="fas fa-clock text-3xl icon-color group-hover:scale-110 transition-transform"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-white text-lg font-medium uppercase tracking-wider text-shadow">Horario de atención</span>
+            </a>
+            
+            <!-- Botón 2: Terapias -->
+            <a href="#" id="coursesButton" class="relative flex items-center h-14 rounded-full gold-gradient button-3d group transition-transform duration-150 ease-in-out">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center icon-bg">
+                    <i class="fas fa-spa text-3xl icon-color group-hover:scale-110 transition-transform"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-white text-lg font-medium uppercase tracking-wider text-shadow">Terapias</span>
+            </a>
+
+            <!-- Botón 3: Testimonios -->
+            <a href="#" id="proceduresButton" class="relative flex items-center h-14 rounded-full gold-gradient button-3d group transition-transform duration-150 ease-in-out">
+                 <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center icon-bg">
+                    <i class="fas fa-star text-3xl icon-color group-hover:scale-110 transition-transform"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-white text-lg font-medium uppercase tracking-wider text-shadow">TESTIMONIOS</span>
+            </a>
+
+            <!-- Botón 5: Compartir QR -->
+            <a href="#" id="qrButton" class="relative flex items-center h-14 rounded-full gold-gradient button-3d group transition-transform duration-150 ease-in-out">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center icon-bg">
+                    <i class="fas fa-qrcode text-3xl icon-color group-hover:scale-110 transition-transform"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-white text-lg font-medium uppercase tracking-wider text-shadow">Compartir QR</span>
+            </a>
+
+            <!-- Botón 6: Guardar Contacto -->
+            <a href="#" id="saveContactButton" download="caterine-mejia.vcf" class="relative flex items-center h-14 rounded-full gold-gradient button-3d group transition-transform duration-150 ease-in-out">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center icon-bg">
+                    <i class="fas fa-address-card text-3xl icon-color group-hover:scale-110 transition-transform"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-white text-lg font-medium uppercase tracking-wider text-shadow">Guardar Contacto</span>
+            </a>
+
+            <!-- Pie de página con correo y redes sociales -->
+            <div class="text-center pt-4 border-t border-gray-100 mt-5">
+                <a href="mailto:caterine.mejia@email.com" class="text-gray-500 hover:name-color transition-colors duration-300 inline-flex items-center space-x-2 text-sm">
+                    <i class="fas fa-envelope"></i>
+                    <span>caterine.mejia@email.com</span>
+                </a>
+                
+                <!-- Redes Sociales -->
+                <div class="mt-4">
+                    <p class="text-xs text-gray-400 mb-2 tracking-wider">SÍGUENOS</p>
+                    <div class="flex justify-center space-x-5">
+                        <a href="#" target="_blank" class="text-gray-500 hover:name-color transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-500 hover:name-color transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-500 hover:name-color transition-colors duration-300">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Popup del Código QR -->
+    <div id="qrPopup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-8 pt-6 text-center shadow-xl relative max-w-xs w-full transform transition-transform duration-300 scale-95">
+            <button id="closeQrPopup" class="absolute top-2 right-2 text-white bg-[#0B4540] rounded-full h-8 w-8 flex items-center justify-center text-lg hover:bg-[#072e2b] focus:outline-none transition-colors">&times;</button>
+            <h3 class="text-xl font-medium mb-4 font-playfair text-[#0B4540]">Escanea para Compartir</h3>
+            <div id="qrcode" class="flex justify-center p-2 bg-white border border-[#0B4540]/30 rounded-lg shadow-inner"></div>
+            <p class="text-xs text-gray-500 mt-4">Apunta la cámara de tu teléfono a este código para abrir la tarjeta.</p>
+        </div>
+    </div>
+
+    <!-- Popup de Testimonios -->
+    <div id="proceduresPopup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 text-center shadow-xl relative max-w-sm w-full transform transition-transform duration-300 scale-95 max-h-[90vh] flex flex-col">
+            <button id="closeProceduresPopup" class="absolute top-2 right-2 text-white bg-[#0B4540] rounded-full h-8 w-8 flex items-center justify-center text-lg hover:bg-[#072e2b] focus:outline-none z-20 transition-colors">&times;</button>
+            <div class="flex-shrink-0">
+                <h3 class="text-2xl font-medium mb-2 font-playfair text-[#0B4540]">Testimonios</h3>
+                <p class="text-sm text-gray-600 mb-4">Descubre lo que dicen nuestras clientas sobre su experiencia de bienestar.</p>
+            </div>
+            <div class="relative w-full mx-auto overflow-hidden rounded-lg flex-grow min-h-0">
+                <div id="carousel-slides" class="flex transition-transform duration-500 ease-in-out h-full"></div>
+                <button id="prevBtn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/30 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/50 transition"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextBtn" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/30 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-black/50 transition"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="mt-4 flex-shrink-0">
+                 <a href="https://wa.me/573045611080?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20un%20procedimiento." target="_blank" class="inline-block px-8 py-3 rounded-full gold-gradient text-white uppercase tracking-wider text-shadow font-semibold button-3d">Agendar Cita</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de Cursos -->
+    <div id="coursesPopup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-xl relative max-w-sm w-full transform transition-transform duration-300 scale-95 max-h-[90vh] overflow-y-auto">
+            <button id="closeCoursesPopup" class="absolute top-2 right-2 text-white bg-[#0B4540] rounded-full h-8 w-8 flex items-center justify-center text-lg hover:bg-[#072e2b] focus:outline-none z-20 transition-colors">&times;</button>
+            <div class="text-center">
+                <h3 class="text-2xl font-medium mb-2 font-playfair text-[#0B4540]">Eleva tu Talento</h3>
+                <p class="text-sm text-gray-600 mb-6">Conviértete en una profesional de élite con nuestros cursos exclusivos.</p>
+            </div>
+            <div class="space-y-4">
+                <!-- Curso 1 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#0B4540]">
+                    <div class="flex items-center">
+                        <img src="https://duebelleza.com/wp-content/uploads/WhatsApp-Image-2025-05-13-at-20.09.35.jpeg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/d1a337/ffffff?text=Curso+Manicura';"
+                             alt="Curso de Manicura Nivel Inicial" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Manicura Nivel Inicial</h4>
+                            <p class="text-xs text-gray-500 mt-1">Domina las bases y técnicas fundamentales.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <ul class="text-xs text-gray-600 text-left space-y-1 mt-3 border-t pt-3">
+                            <li><strong>Duración:</strong> 4 semanas (2 clases/semana)</li>
+                            <li><strong>Horarios:</strong> Mar y Jue, 10:00 AM - 1:00 PM</li>
+                            <li><strong>Precio:</strong> $250</li>
+                            <li><strong>Materiales:</strong> Kit de inicio completo incluido.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Curso 2 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#B480EF]">
+                    <div class="flex items-center">
+                        <img src="https://i.pinimg.com/originals/ed/05/3a/ed053a3fcbf46331b6144b38ee6a1acd.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/d1a337/ffffff?text=Diseno+Avanzado';"
+                             alt="Curso de Diseño y Arte Avanzado" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Diseño y Arte Avanzado</h4>
+                            <p class="text-xs text-gray-500 mt-1">Perfecciona tu técnica y crea diseños únicos.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+                     <div class="course-details">
+                        <ul class="text-xs text-gray-600 text-left space-y-1 mt-3 border-t pt-3">
+                            <li><strong>Duración:</strong> 6 semanas (2 clases/semana)</li>
+                            <li><strong>Horarios:</strong> Lun y Mié, 2:00 PM - 5:00 PM</li>
+                            <li><strong>Precio:</strong> $400</li>
+                            <li><strong>Materiales:</strong> Pinceles de detalle, geles de arte, pedrería.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Curso 3 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#B480EF]">
+                    <div class="flex items-center">
+                        <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/a1ea05dd9400cf3e7c1d50bb51a26191.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/d1a337/ffffff?text=Nail+Boss';"
+                             alt="Mockup de Master Class" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Master Class: Nail Boss</h4>
+                            <p class="text-xs text-gray-500 mt-1">Aprende a gestionar y escalar tu negocio.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+    <!-- Popup de Terapias -->
+    <div id="coursesPopup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-xl relative max-w-sm w-full transform transition-transform duration-300 scale-95 max-h-[90vh] overflow-y-auto">
+            <button id="closeCoursesPopup" class="absolute top-2 right-2 text-white bg-[#0B4540] rounded-full h-8 w-8 flex items-center justify-center text-lg hover:bg-[#072e2b] focus:outline-none z-20 transition-colors">&times;</button>
+            <div class="text-center">
+                <h3 class="text-2xl font-medium mb-2 font-playfair text-[#0B4540]">Nuestras Terapias</h3>
+                <p class="text-sm text-gray-600 mb-6">Conecta con tu bienestar interior a través de nuestras sesiones especializadas.</p>
+            </div>
+            <div class="space-y-4">
+                <!-- Terapia 1 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#0B4540]">
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/0B4540/ffffff?text=Terapia+Holistica';"
+                             alt="Terapia Holística" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Terapia Holística</h4>
+                            <p class="text-xs text-gray-500 mt-1">Equilibrio integral de cuerpo, mente y energía.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <ul class="text-xs text-gray-600 text-left space-y-1 mt-3 border-t pt-3">
+                            <li><strong>Duración:</strong> 60 minutos</li>
+                            <li><strong>Beneficios:</strong> Reducción de estrés y relajación profunda.</li>
+                            <li><strong>Precio:</strong> $120.000 COP</li>
+                            <li><strong>Incluye:</strong> Aromaterapia y musicoterapia.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Terapia 2 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#B480EF]">
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=400&auto=format&fit=crop" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/0B4540/ffffff?text=Masaje+Terapeutico';"
+                             alt="Masaje Terapéutico Descontracturante" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Masaje Terapéutico</h4>
+                            <p class="text-xs text-gray-500 mt-1">Alivia la tensión muscular y dolores acumulados.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+                     <div class="course-details">
+                        <ul class="text-xs text-gray-600 text-left space-y-1 mt-3 border-t pt-3">
+                            <li><strong>Duración:</strong> 75 minutos</li>
+                            <li><strong>Zonas:</strong> Espalda, cuello, hombros y extremidades.</li>
+                            <li><strong>Precio:</strong> $150.000 COP</li>
+                            <li><strong>Incluye:</strong> Aceites esenciales relajantes y termoterapia.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Terapia 3 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#B480EF]">
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1512290900673-7002b541d8e1?q=80&w=400&auto=format&fit=crop" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/0B4540/ffffff?text=Reflexologia';"
+                             alt="Reflexología Podal" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Reflexología Podal</h4>
+                            <p class="text-xs text-gray-500 mt-1">Estimulación de puntos reflejos para la salud integral.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+                     <div class="course-details">
+                        <ul class="text-xs text-gray-600 text-left space-y-1 mt-3 border-t pt-3">
+                            <li><strong>Duración:</strong> 50 minutos</li>
+                            <li><strong>Enfoque:</strong> Puntos de presión en pies y relajación general.</li>
+                            <li><strong>Precio:</strong> $110.000 COP</li>
+                            <li><strong>Incluye:</strong> Exfoliación e hidratación profunda podal.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Terapia 4 -->
+                <div class="bg-white border border-transparent rounded-lg p-3 transition-all duration-300 hover:shadow-md hover:border-[#B480EF]">
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=400&auto=format&fit=crop" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x500/0B4540/ffffff?text=Drenaje+Linfatico';"
+                             alt="Drenaje Linfático Manual" class="w-24 h-32 object-cover rounded-md">
+                        <div class="pl-4">
+                            <h4 class="font-semibold text-gray-800">Drenaje Linfático</h4>
+                            <p class="text-xs text-gray-500 mt-1">Desintoxicación corporal y eliminación de líquidos.</p>
+                            <button class="course-info-toggle text-xs font-bold name-color mt-2 inline-block">MÁS INFO &rarr;</button>
+                        </div>
+                    </div>
+                     <div class="course-details">
+                        <ul class="text-xs text-gray-600 text-left space-y-1 mt-3 border-t pt-3">
+                            <li><strong>Duración:</strong> 60 minutos</li>
+                            <li><strong>Enfoque:</strong> Estimulación del sistema linfático.</li>
+                            <li><strong>Precio:</strong> $130.000 COP</li>
+                            <li><strong>Recomendado:</strong> Post-operatorio o eliminación de toxinas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de Instalación -->
+    <div id="installPopup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-xl relative max-w-sm w-full transform transition-transform duration-300 scale-95 max-h-[90vh] overflow-y-auto">
+            <button id="closeInstallPopup" class="absolute top-2 right-2 text-white bg-[#0B4540] rounded-full h-8 w-8 flex items-center justify-center text-lg hover:bg-[#072e2b] focus:outline-none z-20 transition-colors">&times;</button>
+            <div class="text-center">
+                 <h3 class="text-2xl font-medium mb-2 font-playfair text-[#0B4540]">¿Cómo instalar en mi dispositivo?</h3>
+                <p class="text-sm text-gray-600 mb-4">Accede a mi tarjeta fácilmente desde tu pantalla de inicio.</p>
+            </div>
+
+            <!-- Pestañas (Tabs) -->
+            <div class="flex border-b mb-4">
+                <button id="iosTab" class="flex-1 p-2 font-semibold install-tab-active flex items-center justify-center gap-2">
+                    <i class="fab fa-apple"></i> iOS
+                </button>
+                <button id="androidTab" class="flex-1 p-2 font-semibold text-gray-400 flex items-center justify-center gap-2">
+                     <i class="fab fa-android"></i> Android
+                </button>
+            </div>
+
+            <!-- Contenido iOS -->
+            <div id="iosInstructions">
+                <ol class="list-decimal list-inside space-y-3 text-left text-sm text-gray-700">
+                    <li>Abre esta página en <strong>Safari</strong>.</li>
+                    <li>Toca el icono de <strong>Compartir</strong> <i class="fas fa-share-square name-color"></i> en la barra de navegación.</li>
+                    <li>Desliza hacia arriba y selecciona <strong>"Añadir a la pantalla de inicio"</strong> <i class="fas fa-plus-square name-color"></i>.</li>
+                    <li>Confirma el nombre y toca <strong>"Añadir"</strong>.</li>
+                </ol>
+            </div>
+
+            <!-- Contenido Android -->
+            <div id="androidInstructions" class="hidden">
+                 <ol class="list-decimal list-inside space-y-3 text-left text-sm text-gray-700">
+                    <li>Abre esta página en <strong>Chrome</strong>.</li>
+                    <li>Toca los <strong>tres puntos</strong> <i class="fas fa-ellipsis-v name-color"></i> en la esquina superior derecha.</li>
+                    <li>Selecciona <strong>"Añadir a pantalla de inicio"</strong> o <strong>"Instalar aplicación"</strong>.</li>
+                    <li>Confirma y pulsa <strong>"Añadir"</strong>.</li>
+                </ol>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Popup de Horario de Atención -->
+    <div id="schedulePopup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-xl relative max-w-sm w-full transform transition-transform duration-300 scale-95">
+            <button id="closeSchedulePopup" class="absolute top-2 right-2 text-white bg-[#0B4540] rounded-full h-8 w-8 flex items-center justify-center text-lg hover:bg-[#072e2b] focus:outline-none z-20 transition-colors">&times;</button>
+            <div class="text-center">
+                <h3 class="text-2xl font-medium mb-4 font-playfair text-[#0B4540]">Nuestro Horario</h3>
+            </div>
+            <div class="text-left text-gray-700 space-y-2">
+                <div class="flex justify-between border-b pb-2">
+                    <span class="font-semibold">Lunes a Viernes</span>
+                    <span>9:00 AM - 7:00 PM</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                    <span class="font-semibold">Sábados</span>
+                    <span>10:00 AM - 5:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-semibold">Domingos</span>
+                    <span>Cerrado</span>
+                </div>
+            </div>
+             <p class="text-xs text-gray-500 mt-4 text-center">Horario sujeto a cambios. Se recomienda agendar cita previa.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- Lógica para el Popup de QR ---
+        const qrButton = document.getElementById('qrButton');
+        const qrPopup = document.getElementById('qrPopup');
+        const closeQrPopup = document.getElementById('closeQrPopup');
+        const qrcodeContainer = document.getElementById('qrcode');
+        const qrPopupContent = qrPopup.querySelector('div');
+
+        const pageUrl = encodeURIComponent(window.location.href);
+        const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${pageUrl}&bgcolor=ffffff&color=000000&qzone=1`;
+        const qrImage = document.createElement('img');
+        qrImage.src = qrImageUrl;
+        qrImage.alt = 'Código QR';
+        qrImage.className = 'rounded-md';
+        qrcodeContainer.appendChild(qrImage);
+
+        const showQrPopup = () => {
+            qrPopup.classList.remove('hidden');
+            setTimeout(() => {
+                qrPopup.style.opacity = '1';
+                qrPopupContent.style.transform = 'scale(1)';
+            }, 10);
+        };
+        const hideQrPopup = () => {
+            qrPopup.style.opacity = '0';
+            qrPopupContent.style.transform = 'scale(0.95)';
+            setTimeout(() => { qrPopup.classList.add('hidden'); }, 300);
+        };
+        qrButton.addEventListener('click', (e) => { e.preventDefault(); showQrPopup(); });
+        closeQrPopup.addEventListener('click', hideQrPopup);
+        qrPopup.addEventListener('click', (e) => { if (e.target === qrPopup) { hideQrPopup(); } });
+
+        // --- Lógica para el Popup de Procedimientos y Carrusel ---
+        const proceduresButton = document.getElementById('proceduresButton');
+        const proceduresPopup = document.getElementById('proceduresPopup');
+        const closeProceduresPopup = document.getElementById('closeProceduresPopup');
+        const carouselSlides = document.getElementById('carousel-slides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const images = [
+            'https://m.media-amazon.com/images/I/61p4hKaX+GL._UF1000,1000_QL80_.jpg',
+            'https://i.pinimg.com/736x/e1/22/cb/e122cbba7fad37d28b784983c4cd6632.jpg',
+            'https://kissbel.com/cdn/shop/articles/preparar-manicura-unas_1.jpg?v=1603964238',
+            'https://img.freepik.com/fotos-premium/manicurista-hace-manicura_93675-26826.jpg',
+            'https://media.istockphoto.com/id/1154416277/es/foto/mano-femenina-con-clavos-rojos-en-la-l%C3%A1mpara-para-manicura-l%C3%A1mpara-de-u%C3%B1as-secador-para-gel.jpg?s=612x612&w=0&k=20&c=L_Y-W_3-o_2yD-zG-vG-z_2z-v-z_2z-v-z_2z-v-z',
+            'https://st.depositphotos.com/5560084/52257/i/450/depositphotos_522574092-stock-photo-nail-care-procedure-in-a.jpg',
+            'https://m.media-amazon.com/images/I/61zG8du0ngL._UF1000,1000_QL80_.jpg',
+            'https://m.media-amazon.com/images/I/61rkaLyPFxL._UF1000,1000_QL80_.jpg',
+            'https://i.ebayimg.com/images/g/VcoAAOSw-wtm0H56/s-l1200.jpg'
+        ];
+
+        let currentIndex = 1;
+        let slideInterval;
+
+        const setupCarousel = () => {
+            const slides = [images[images.length - 1], ...images, images[0]];
+            carouselSlides.innerHTML = slides.map(src => `
+                <div class="w-full flex-shrink-0 h-full bg-white flex items-center justify-center p-2">
+                    <img src="${src}" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x600/b48521/ffffff?text=Nail+Art';"
+                         class="max-w-full max-h-full object-contain rounded-md" alt="Imagen de procedimiento de uñas">
+                </div>
+            `).join('');
+            updateCarousel(false);
+        };
+
+        const updateCarousel = (withTransition = true) => {
+            carouselSlides.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none';
+            carouselSlides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+        
+        const moveToNextSlide = () => {
+            if (currentIndex >= images.length + 1) return;
+            currentIndex++;
+            updateCarousel();
+        };
+
+        const moveToPrevSlide = () => {
+            if (currentIndex <= 0) return;
+            currentIndex--;
+            updateCarousel();
+        };
+
+        const startAutoSlide = () => {
+            stopAutoSlide();
+            slideInterval = setInterval(moveToNextSlide, 3000);
+        };
+
+        const stopAutoSlide = () => {
+            clearInterval(slideInterval);
+        };
+
+        carouselSlides.addEventListener('transitionend', () => {
+            if (currentIndex === 0) {
+                currentIndex = images.length;
+                updateCarousel(false);
+            } else if (currentIndex === images.length + 1) {
+                currentIndex = 1;
+                updateCarousel(false);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            moveToNextSlide();
+            startAutoSlide();
+        });
+        prevBtn.addEventListener('click', () => {
+            moveToPrevSlide();
+            startAutoSlide();
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselSlides.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselSlides.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 40) {
+                moveToNextSlide();
+                startAutoSlide();
+            } else if (touchEndX - touchStartX > 40) {
+                moveToPrevSlide();
+                startAutoSlide();
+            }
+        }, { passive: true });
+
+        const showProceduresPopup = () => {
+            proceduresPopup.classList.remove('hidden');
+            setTimeout(() => {
+                proceduresPopup.style.opacity = '1';
+                proceduresPopup.querySelector('div').style.transform = 'scale(1)';
+            }, 10);
+            startAutoSlide();
+        };
+        const hideProceduresPopup = () => {
+            proceduresPopup.style.opacity = '0';
+            proceduresPopup.querySelector('div').style.transform = 'scale(0.95)';
+            setTimeout(() => { proceduresPopup.classList.add('hidden'); }, 300);
+            stopAutoSlide();
+        };
+        
+        proceduresButton.addEventListener('click', (e) => { e.preventDefault(); showProceduresPopup(); });
+        closeProceduresPopup.addEventListener('click', hideProceduresPopup);
+        proceduresPopup.addEventListener('click', (e) => { if (e.target === proceduresPopup) { hideProceduresPopup(); } });
+        
+        // --- Lógica para el Popup de Cursos ---
+        const coursesButton = document.getElementById('coursesButton');
+        const coursesPopup = document.getElementById('coursesPopup');
+        const closeCoursesPopup = document.getElementById('closeCoursesPopup');
+
+        const showCoursesPopup = () => {
+            coursesPopup.classList.remove('hidden');
+            setTimeout(() => {
+                coursesPopup.style.opacity = '1';
+                coursesPopup.querySelector('div').style.transform = 'scale(1)';
+            }, 10);
+        };
+
+        const hideCoursesPopup = () => {
+            coursesPopup.style.opacity = '0';
+            coursesPopup.querySelector('div').style.transform = 'scale(0.95)';
+            setTimeout(() => { coursesPopup.classList.add('hidden'); }, 300);
+        };
+
+        coursesButton.addEventListener('click', (e) => { e.preventDefault(); showCoursesPopup(); });
+        closeCoursesPopup.addEventListener('click', hideCoursesPopup);
+        coursesPopup.addEventListener('click', (e) => { 
+            if (e.target === coursesPopup) { 
+                hideCoursesPopup();
+            }
+            if (e.target.classList.contains('course-info-toggle')) {
+                const button = e.target;
+                const details = button.closest('.flex').nextElementSibling;
+                details.classList.toggle('open');
+                if (details.classList.contains('open')) {
+                    button.innerHTML = 'MENOS INFO &larr;';
+                } else {
+                    button.innerHTML = 'MÁS INFO &rarr;';
+                }
+            }
+        });
+        
+        // --- Lógica para el Popup de Instalación ---
+        const installButton = document.getElementById('installButton');
+        const installPopup = document.getElementById('installPopup');
+        const closeInstallPopup = document.getElementById('closeInstallPopup');
+        const iosTab = document.getElementById('iosTab');
+        const androidTab = document.getElementById('androidTab');
+        const iosInstructions = document.getElementById('iosInstructions');
+        const androidInstructions = document.getElementById('androidInstructions');
+
+        const showInstallPopup = () => {
+            installPopup.classList.remove('hidden');
+            setTimeout(() => {
+                installPopup.style.opacity = '1';
+                installPopup.querySelector('div').style.transform = 'scale(1)';
+            }, 10);
+        };
+        
+        const hideInstallPopup = () => {
+            installPopup.style.opacity = '0';
+            installPopup.querySelector('div').style.transform = 'scale(0.95)';
+            setTimeout(() => { installPopup.classList.add('hidden'); }, 300);
+        };
+
+        installButton.addEventListener('click', (e) => { e.preventDefault(); showInstallPopup(); });
+        closeInstallPopup.addEventListener('click', hideInstallPopup);
+        installPopup.addEventListener('click', (e) => { if (e.target === installPopup) { hideInstallPopup(); }});
+
+        iosTab.addEventListener('click', () => {
+            iosInstructions.classList.remove('hidden');
+            androidInstructions.classList.add('hidden');
+            iosTab.classList.add('install-tab-active');
+            androidTab.classList.remove('install-tab-active', 'text-gray-400');
+            androidTab.classList.add('text-gray-400');
+        });
+        
+        androidTab.addEventListener('click', () => {
+            androidInstructions.classList.remove('hidden');
+            iosInstructions.classList.add('hidden');
+            androidTab.classList.add('install-tab-active');
+            iosTab.classList.remove('install-tab-active');
+            iosTab.classList.add('text-gray-400');
+        });
+
+        // --- Lógica para vCard (Guardar Contacto) ---
+        const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:Caterine Mejía - Bienestar desde adentro\nORG:Caterine Mejía Nails Academy\nTITLE:Nail Artist\nTEL;TYPE=WORK,VOICE:+573045611080\nEMAIL:caterine.mejia@email.com\nEND:VCARD`;
+        const vCardUrl = `data:text/vcard;charset=utf-8,${encodeURIComponent(vCardData)}`;
+        document.getElementById('saveContactButton').href = vCardUrl;
+
+        // --- Lógica para el Popup de Horario ---
+        const scheduleButton = document.getElementById('scheduleButton');
+        const schedulePopup = document.getElementById('schedulePopup');
+        const closeSchedulePopup = document.getElementById('closeSchedulePopup');
+
+        const showSchedulePopup = () => {
+            schedulePopup.classList.remove('hidden');
+            setTimeout(() => {
+                schedulePopup.style.opacity = '1';
+                schedulePopup.querySelector('div').style.transform = 'scale(1)';
+            }, 10);
+        };
+
+        const hideSchedulePopup = () => {
+            schedulePopup.style.opacity = '0';
+            schedulePopup.querySelector('div').style.transform = 'scale(0.95)';
+            setTimeout(() => { schedulePopup.classList.add('hidden'); }, 300);
+        };
+
+        scheduleButton.addEventListener('click', (e) => { e.preventDefault(); showSchedulePopup(); });
+        closeSchedulePopup.addEventListener('click', hideSchedulePopup);
+        schedulePopup.addEventListener('click', (e) => { if (e.target === schedulePopup) { hideSchedulePopup(); } });
+
+        // Inicializar el carrusel al cargar la página
+        setupCarousel();
+    </script>
+</body>
+</html>
